@@ -124,6 +124,12 @@ foreach(appPath IN LISTS EIRR_APP_PATHS)
         target_compile_definitions(${app} PRIVATE $<$<CONFIG:Debug>:_GLIBCXX_ASSERTIONS>)
     endif()
 
+    # ── ★ Debug 版自動定義 LOCAL ────────────────────────────
+    #    src/_solve/solve.cpp 裡的 dbg(x) 巨集只在 LOCAL 有定義時才印東西。
+    #    Debug = 本機測試,要看中間值;Release = 乾淨輸出。
+    #    好處:交題目之前不用刪任何 debug 程式碼。
+    target_compile_definitions(${app} PRIVATE $<$<CONFIG:Debug>:LOCAL>)
+
     if(EIRR_ASAN AND MSVC)
         target_compile_options(${app} PRIVATE /fsanitize=address /Zi)
         target_link_options(${app} PRIVATE /INCREMENTAL:NO /DEBUG)
