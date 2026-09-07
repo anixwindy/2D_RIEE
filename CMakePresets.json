@@ -1,0 +1,49 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 25, "patch": 0 },
+
+  "configurePresets": [
+    {
+      "name": "x64-debug",
+      "displayName": "x64 Debug",
+      "description": "平常用這個。編譯快,有除錯資訊。",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "architecture": { "value": "x64", "strategy": "external" },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "EIRR_ASAN": "OFF"
+      }
+    },
+    {
+      "name": "x64-release",
+      "displayName": "x64 Release",
+      "description": "★ 量分數用這個。要看粒子開到幾顆才掉幀,一定要用 Release。",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-release",
+      "architecture": { "value": "x64", "strategy": "external" },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "EIRR_ASAN": "OFF"
+      }
+    },
+    {
+      "name": "x64-asan",
+      "displayName": "x64 Debug + AddressSanitizer",
+      "description": "程式當掉又找不到原因時切這個。陣列越界會印出檔名 + 行號。慢約 2 倍。只有 MSVC 有。",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-asan",
+      "architecture": { "value": "x64", "strategy": "external" },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "EIRR_ASAN": "ON"
+      }
+    }
+  ],
+
+  "buildPresets": [
+    { "name": "x64-debug",   "configurePreset": "x64-debug" },
+    { "name": "x64-release", "configurePreset": "x64-release" },
+    { "name": "x64-asan",    "configurePreset": "x64-asan" }
+  ]
+}

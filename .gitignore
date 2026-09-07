@@ -1,0 +1,56 @@
+# ══════════════════════════════════════════════════════════
+#  2D_RIEE — Competitive Programming + C++20 (raylib 只給 src/_viz 用)
+# ══════════════════════════════════════════════════════════
+
+# ── 私人:不上公開 repo ──
+CLAUDE.md
+AC_*.md
+.claude/
+_tools/start_claudee.ps1
+seesee.md
+*_對話*.md
+對話*.md
+
+# ── ★ raylib 原始碼(幾十 MB,不進版控)──
+#    重抓:雙擊 _tools\get_raylib.bat
+vendor/
+
+# ── 建置產物 ──
+build*/
+cmake-build-*/
+bin/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# ── IDE(每次產生方案都會重生)──
+.vs/
+.vscode/
+.idea/
+*.sln
+*.slnx
+*.vcxproj
+*.vcxproj.*
+*.suo
+*.user
+*.opendb
+*.VC.db
+*.aps
+
+# ── 編譯中間物 ──
+*.obj
+*.o
+*.lib
+*.a
+*.exp
+*.pdb
+*.ilk
+*.idb
+*.exe
+*.dll
+
+# ── 截圖 / 錄影(自己留著,不上傳)──
+shots/
+*.gif
+*.mp4
