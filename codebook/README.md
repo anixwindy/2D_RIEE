@@ -43,7 +43,7 @@
 | 情境 | 做什麼 |
 |---|---|
 | 想確認某支怎麼用 | **直接編譯執行它**,每支都有 `main()` 示範 + 預期輸出寫在註解 |
-| 要用在題目上 | 複製「`main()` 以外」的部分,貼進 `src/_solve/solve.cpp` |
+| 要用在題目上 | 複製「`main()` 以外」的部分,貼進 `../src/_solve/solve_model.cpp` |
 | 編譯單一支 | `g++ -std=c++20 -O2 -o out.exe codebook/04_dp/knapsack.cpp` |
 | 全部重新驗證 | 見 §3 |
 

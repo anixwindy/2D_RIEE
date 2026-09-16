@@ -6,44 +6,23 @@
     {
       "name": "x64-debug",
       "displayName": "x64 Debug",
-      "description": "平常用這個。編譯快,有除錯資訊。",
+      "description": "★ 平常一律用這個。dbg() 會印、vector 越界會喊。",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build",
-      "architecture": { "value": "x64", "strategy": "external" },
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "EIRR_ASAN": "OFF"
-      }
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
     },
     {
       "name": "x64-release",
       "displayName": "x64 Release",
-      "description": "★ 量分數用這個。要看粒子開到幾顆才掉幀,一定要用 Release。",
+      "description": "覺得會 TLE、想量真實速度時才切這個。",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build-release",
-      "architecture": { "value": "x64", "strategy": "external" },
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release",
-        "EIRR_ASAN": "OFF"
-      }
-    },
-    {
-      "name": "x64-asan",
-      "displayName": "x64 Debug + AddressSanitizer",
-      "description": "程式當掉又找不到原因時切這個。陣列越界會印出檔名 + 行號。慢約 2 倍。只有 MSVC 有。",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build-asan",
-      "architecture": { "value": "x64", "strategy": "external" },
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "EIRR_ASAN": "ON"
-      }
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
     }
   ],
 
   "buildPresets": [
     { "name": "x64-debug",   "configurePreset": "x64-debug" },
-    { "name": "x64-release", "configurePreset": "x64-release" },
-    { "name": "x64-asan",    "configurePreset": "x64-asan" }
+    { "name": "x64-release", "configurePreset": "x64-release" }
   ]
 }

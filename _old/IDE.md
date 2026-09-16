@@ -10,7 +10,7 @@
 
 | 按什麼 | 看到什麼 |
 |---|---|
-| target 下拉選 **`_solve`** | 你的解題檔 `src/_solve/solve.cpp` |
+| target 下拉選 **`_solve`** | 你的解題檔 `src/_solve/solve_model.cpp` |
 | **▶(綠三角)** | 編譯 + 執行,**測資從 `in.txt` 自動餵進去**(要先做 §2) |
 | **🐞(蟲子)** | 同上但可以下中斷點看變數。CLion 用 msys64 的 gdb,跟 GCC 完全對得上 |
 | `Shift+F6` | 全專案改名 |

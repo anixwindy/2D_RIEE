@@ -28,8 +28,8 @@
                改了 CMakeLists:只有 `#include "raylib.h"` 的資料夾才連 raylib
                → `_solve` 編譯不用再等 raylib。
                ⚠ 建工作區不是解題。今天的真實產出是 0 題。
-- NEXT       : **挑一題 1400 分的 DP,寫在 `src/_solve/solve.cpp`。**
+- NEXT       : **挑一題 1400 分的 DP,寫在 `../src/_solve/solve_model.cpp`。**
                AC 之後在 `cp/solved/` 留下第一份 .md,
-               再回頭把 `codebook/04_dp/knapsack.cpp` 的驗證欄改成 `[OK]`。
+  再回頭把 `codebook/04_dp/knapsack.cpp` 的驗證欄改成 `[OK]`。
 
 ---

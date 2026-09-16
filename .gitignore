@@ -6,11 +6,14 @@
 CLAUDE.md
 AC_*.md
 .claude/
-_tools/start_claudee.ps1
+start_claudee.ps1
 seesee.md
 *_對話*.md
 對話*.md
 
+# ── 舊 CP 存放區：本機自己留著，不上公開 repo ──
+CP_old/
+_old/
 # ── ★ raylib 原始碼(幾十 MB,不進版控)──
 #    重抓:雙擊 _tools\get_raylib.bat
 vendor/
