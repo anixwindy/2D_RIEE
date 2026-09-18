@@ -32,15 +32,27 @@
     #include <unordered_set>
     #include <vector>
 #endif
+
 using namespace std;
 
+// ---- 型別:全部用 using ----
 using ll  = long long;
 using ull = unsigned long long;
 using pii = pair<int,int>;
 using pll = pair<ll,ll>;
+using vi  = vector<int>;
+using vll = vector<ll>;
+template<class T> using vec = vector<T>;            // macro 做不到的
+template<class T> using vec2 = vector<vector<T>>;
+
+// ---- 非型別:只能用 macro ----
+#define pb push_back
+#define fi first
+#define se second
 #define all(x)  (x).begin(), (x).end()
 #define rall(x) (x).rbegin(), (x).rend()
 #define sz(x)   (int)(x).size()
+
 
 const ll  INF = LLONG_MAX / 4;
 const int MOD = 1000000007;

@@ -1,3 +1,6 @@
+//
+//
+//
 //236A - Boy or Girl
 #if defined(__GNUC__) && !defined(__clang__)
     #include <bits/stdc++.h>          // GCC / MinGW(CLion 走這條)
@@ -53,11 +56,33 @@ const int MOD = 1000000007;
 #endif
 // ────────────────────────────────────────────────
 void solve() {
+     string s;
+     cin>>s;
 
 
 
-    
+
+     vector<char> a;                          // 已經收集到的「不同字元」
+
+     for (int i = 0; i < sz(s); i++) {        // 外層:逐一讀 s 的每個字元
+         bool found = false;   // ❌ 放在外層迴圈「外面」// ★ 修正③ 旗標,每個 i 重置一次
+         //重點 就下面這一行
+         for (int j = 0; j < sz(a); j++) {    // ★ 修正① 掃的是 a,不是 s
+             if (s[i] == a[j]) {
+                 found = true;
+                 break;                       // 撞到了,不用再看下去
+             }
+         }
+         if (!found) a.pb(s[i]);
+         // ★ 修正② 存的是s[i],且寫在內層迴圈「外面」
+     }
+
+     if (sz(a) % 2 == 0) cout << "CHAT WITH HER!\n";
+     else                cout << "IGNORE HIM!\n";
 }
+
+
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
